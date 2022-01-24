@@ -38,9 +38,16 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    // write your solution here
+    let myArray = [];
+
+    for (let i = 0; i < expr.length; i += 10) {
+        myArray.push(expr.slice(i, i + 10) );
+    }
 }
 
 module.exports = {
     decode
 }
+
+10 - точка, 11 - тире
+********** - пробел
