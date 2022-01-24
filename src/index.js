@@ -39,15 +39,24 @@ const MORSE_TABLE = {
 
 function decode(expr) {
     let myArray = [];
+    let subMassive = [];
+    let result = [];
 
     for (let i = 0; i < expr.length; i += 10) {
         myArray.push(expr.slice(i, i + 10) );
     }
-}
 
+    for (let j = 0; j < myArray.length; j ++) {
+        subMassive.push(myArray[j].replace(/10/gi, "-").replace(/11/gi, ".").replace(/0/gi, "").replace(/\*{10}/gi, " ") );
+    }
+
+    subMassive.forEach((element) => {
+        result.push(MORSE_TABLE[element]);
+      })
+
+      return result.join("");
+    }
+    
 module.exports = {
     decode
 }
-
-10 - точка, 11 - тире
-********** - пробел
