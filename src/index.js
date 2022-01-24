@@ -47,16 +47,15 @@ function decode(expr) {
     }
 
     for (let j = 0; j < myArray.length; j ++) {
-        subMassive.push(myArray[j].replace(/10/gi, "-").replace(/11/gi, ".").replace(/0/gi, "").replace(/\*{10}/gi, " ") );
+        subMassive.push(myArray[j].replace(/10/gi, ".").replace(/11/gi, "-").replace(/0/gi, "").replace(/\*{10}/gi, " ") );
     }
 
-    subMassive.forEach((element) => {
-        result.push(MORSE_TABLE[element]);
+    subMassive.forEach( (element) => {
+        result.push(MORSE_TABLE[element] );
       })
-
       return result.join("");
     }
-    
+
 module.exports = {
     decode
 }
