@@ -51,11 +51,14 @@ function decode(expr) {
     }
 
     subMassive.forEach( (element) => {
-        result.push(MORSE_TABLE[element] );
+        if (MORSE_TABLE[element] ) {
+          result.push(MORSE_TABLE[element] );
+        } else {
+          result.push(" ");
+        }
       })
       return result.join("");
-    }
-
+}
 module.exports = {
     decode
 }
